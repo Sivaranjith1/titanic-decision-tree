@@ -18,3 +18,5 @@ class Tree:
     @staticmethod
     def decision_tree_learning(examples, attributes, parent_examples):
         if len(examples): return none #need to do
+
+    def plurality_value(data):

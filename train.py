@@ -52,9 +52,9 @@ def remove_columns(data, columns):
 
 
 if __name__ == '__main__':
-    trainingData = load_csv('dataset/train.csv')
+    training_data = load_csv('dataset/train.csv')
 
-    missing_columns = find_missing_columns(trainingData)
-    trainingData = remove_columns(trainingData, missing_columns)
+    missing_columns = find_missing_columns(training_data)
+    training_data = remove_columns(training_data, missing_columns)
 
-    print(trainingData[0])
+    print(training_data[0])
