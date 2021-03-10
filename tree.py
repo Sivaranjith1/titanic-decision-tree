@@ -17,8 +17,11 @@ class Tree:
     '''
     @staticmethod
     def decision_tree_learning(examples, attributes, parent_examples, classification_index=0):
-        if len(examples): return Tree.plurality_value(parent_examples) #return the most common output
+        if len(examples) == 0: return Tree.plurality_value(parent_examples) #return the most common output
         if Tree.same_classification(examples): return examples[0][classification_index] #return the class of the first element, since every is the same
+        if len(attributes) == 0: return Tree.plurality_value(examples) #if attribute is empty return most common output
+
+
 
     '''
     @breif return the most common output from the dataset
@@ -26,19 +29,20 @@ class Tree:
     @param data the dataset
     @param classification_index the index in the dataset where the class is given
 
-    @return int the most common classification
+    @return str the most common classification
     '''
     @staticmethod
     def plurality_value(data, classification_index=0):
-        count = []
+        count = {}
         for line in data:
-            value = int(line[classification_index]) #the classification in the dataset
-            while len(count) <= value:
-                count.append(0) #adds 0 cases at this index
-            
-            count[value] += 1 #add one more count
+            value = line[classification_index] #the classification in the dataset
+
+            if value in count:
+                count[value] += 1 #add one more count
+            else:
+                count[value] = 1
         
-        return count.index(max(count))
+        return max(count, key=count.get) #get the max key
 
     '''
     @breif Check if all the data in a dataset have the same classification
