@@ -144,4 +144,5 @@ class Tree:
     @staticmethod
     def entropy_boolean_value(q):
         if q == 0: return 0
+        if q == 1: return 0
         return -(q*math.log2(q) + (1-q)*math.log2(1-q))

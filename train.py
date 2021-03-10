@@ -50,14 +50,32 @@ def remove_columns(data, columns):
 
     return edited_data
 
+'''
+@breif change the lines in the dataset to be dicts
+
+@param data the dataset
+
+@retun array of dict returns the dataset where the lines have been replaced with dicts
+'''
+def convert_line_to_dict(data):
+    edited_data = []
+    for line in data:
+        new_line_dict = {}
+        for i, column in enumerate(line):
+            new_line_dict[i] = column
+        edited_data.append(new_line_dict)
+    return edited_data
+
 
 if __name__ == '__main__':
     training_data = load_csv('dataset/train.csv')
 
     missing_columns = find_missing_columns(training_data)
     training_data = remove_columns(training_data, missing_columns)
+    training_data = convert_line_to_dict(training_data)
 
     print(training_data[0])
+    print(Tree.importance([1,3,4,5,8], training_data))
 
     print(f"Count ${Tree.plurality_value([['0', 'Gril'],['1', 'Gril'],['1', 'Gril'],['69', 'Gril'],['69', 'Gril'],['69', 'Gril'],])}")
 
