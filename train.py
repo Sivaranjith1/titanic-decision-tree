@@ -1,4 +1,4 @@
-import tree
+from tree import Tree
 from csv import reader
 
 '''
