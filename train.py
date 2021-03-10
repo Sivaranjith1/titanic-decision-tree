@@ -58,3 +58,7 @@ if __name__ == '__main__':
     training_data = remove_columns(training_data, missing_columns)
 
     print(training_data[0])
+
+    print(f"Count ${Tree.plurality_value([['0', 'Gril'],['1', 'Gril'],['1', 'Gril'],['69', 'Gril'],['69', 'Gril'],['69', 'Gril'],])}")
+
+    print(Tree.importance([1, 2], [['0', 'Gril', 'test1'],['1', 'Gril', 'test1'],['1', 'test', 'test2'],['69', 'Gril', 'test1'],['69', 'Gril', 'test2'],['69', 'Gril', 'test1'],]))
