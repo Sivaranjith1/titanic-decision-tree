@@ -16,8 +16,9 @@ class Tree:
     @return tree a fully trained tree 
     '''
     @staticmethod
-    def decision_tree_learning(examples, attributes, parent_examples):
+    def decision_tree_learning(examples, attributes, parent_examples, classification_index=0):
         if len(examples): return Tree.plurality_value(parent_examples) #return the most common output
+        if Tree.same_classification(examples): return examples[0][classification_index] #return the class of the first element, since every is the same
 
     '''
     @breif return the most common output from the dataset
@@ -38,3 +39,23 @@ class Tree:
             count[value] += 1 #add one more count
         
         return count.index(max(count))
+
+    '''
+    @breif Check if all the data in a dataset have the same classification
+    
+    @param data the dataset
+    @param classification_index the index in the dataset where the class is given
+
+    @return bool returns true if the classification is same
+    '''
+    @staticmethod
+    def same_classification(data, classification_index=0):
+        first_class = data[0][classification_index] #the first class
+
+        for line in data:
+            classification = line[classification_index] #Classification from dataset
+
+            if classification != first_class: #if a class is different, they are not the same
+                return False
+        
+        return True
