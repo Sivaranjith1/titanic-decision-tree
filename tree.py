@@ -15,7 +15,7 @@ class Tree:
         string = f"{self.attribute} \n"
 
         for branch in self.branch:
-            string += branch + "\t"
+            string += str(branch) + "\t"
             string += f"{self.branch[branch]} \t"
             string += "\n"
 
