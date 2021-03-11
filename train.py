@@ -131,23 +131,23 @@ if __name__ == '__main__':
 
     print(training_data[0])
 
-    #change the Sibsp row to dicrete values
-    training_data   = convert_continous_to_discrete_values(training_data, 4, {"min": 0, "max": 0, "output": "none"})
-    training_data   = convert_continous_to_discrete_values(training_data, 4, {"min": 1, "max": 4, "output": "1 to 4"})
-    training_data   = convert_continous_to_discrete_values(training_data, 4, {"min": 5, "max": 100, "output": ">=5"})
+    # #change the Sibsp row to dicrete values
+    # training_data   = convert_continous_to_discrete_values(training_data, 4, {"min": 0, "max": 0, "output": "none"})
+    # training_data   = convert_continous_to_discrete_values(training_data, 4, {"min": 1, "max": 4, "output": "1 to 4"})
+    # training_data   = convert_continous_to_discrete_values(training_data, 4, {"min": 5, "max": 100, "output": ">=5"})
 
-    test_data       = convert_continous_to_discrete_values(test_data, 4, {"min": 0, "max": 0, "output": "none"})
-    test_data       = convert_continous_to_discrete_values(test_data, 4, {"min": 1, "max": 4, "output": "1 to 4"})
-    test_data       = convert_continous_to_discrete_values(test_data, 4, {"min": 5, "max": 100, "output": ">=5"})
+    # test_data       = convert_continous_to_discrete_values(test_data, 4, {"min": 0, "max": 0, "output": "none"})
+    # test_data       = convert_continous_to_discrete_values(test_data, 4, {"min": 1, "max": 4, "output": "1 to 4"})
+    # test_data       = convert_continous_to_discrete_values(test_data, 4, {"min": 5, "max": 100, "output": ">=5"})
 
-    #change the Parch row to dicrete values
-    training_data   = convert_continous_to_discrete_values(training_data, 5, {"min": 0, "max": 0, "output": "none"})
-    training_data   = convert_continous_to_discrete_values(training_data, 5, {"min": 1, "max": 3, "output": "1 to 3"})
-    training_data   = convert_continous_to_discrete_values(training_data, 5, {"min": 4, "max": 100, "output": ">=4"})
+    # #change the Parch row to dicrete values
+    # training_data   = convert_continous_to_discrete_values(training_data, 5, {"min": 0, "max": 0, "output": "none"})
+    # training_data   = convert_continous_to_discrete_values(training_data, 5, {"min": 1, "max": 3, "output": "1 to 3"})
+    # training_data   = convert_continous_to_discrete_values(training_data, 5, {"min": 4, "max": 100, "output": ">=4"})
 
-    test_data       = convert_continous_to_discrete_values(test_data, 5, {"min": 0, "max": 0, "output": "none"})
-    test_data       = convert_continous_to_discrete_values(test_data, 5, {"min": 1, "max": 3, "output": "1 to 3"})
-    test_data       = convert_continous_to_discrete_values(test_data, 5, {"min": 4, "max": 100, "output": ">=4"})
+    # test_data       = convert_continous_to_discrete_values(test_data, 5, {"min": 0, "max": 0, "output": "none"})
+    # test_data       = convert_continous_to_discrete_values(test_data, 5, {"min": 1, "max": 3, "output": "1 to 3"})
+    # test_data       = convert_continous_to_discrete_values(test_data, 5, {"min": 4, "max": 100, "output": ">=4"})
 
     print(Tree.get_values_of_attribute(4, training_data))
     print(Tree.get_values_of_attribute(5, training_data))
