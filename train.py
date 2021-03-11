@@ -1,6 +1,7 @@
 from tree import Tree
 from csv import reader
 import math
+from graphviz import Digraph
 
 '''
     @breif Returns the rows in a csv as a array
@@ -153,6 +154,7 @@ def change_to_numbers(data, attribute):
     return new_data
 
 if __name__ == '__main__':
+    dot = Digraph()
     #load the datasets
     training_data   = load_csv('dataset/train.csv')
     test_data       = load_csv('dataset/test.csv')
@@ -170,7 +172,7 @@ if __name__ == '__main__':
 
     print(training_data[0])
 
-    trained_w_categorical = Tree.decision_tree_learning(training_data, [1, 3, 4, 5, 8], []) #the trained decision tree for only categorical values
+    trained_w_categorical = Tree.decision_tree_learning(training_data, [1, 3, 4, 5, 8], [], dot) #the trained decision tree for only categorical values
     print(f"Accuracy on the testdata on model with only categorical value: \n\t {get_accuracy(trained_w_categorical, test_data)}")
     trained_w_categorical.print()
 
@@ -210,8 +212,13 @@ if __name__ == '__main__':
     # print(Tree.get_values_of_attribute(5, training_data))
     # print(Tree.get_values_of_attribute(6, training_data))
 
-    trained_w_continous = Tree.decision_tree_learning(training_data, [1, 3, 4, 5, 6, 7, 8], []) #the trained decision tree for continous values too 
+    dot.render('test-output/round-table.gv', view=True)
+    dot = Digraph()
+    trained_w_continous = Tree.decision_tree_learning(training_data, [1, 3, 4, 5, 6, 7, 8], [], dot) #the trained decision tree for continous values too 
 
     print("\n\n")
     print(f"Accuracy on the testdata on model with continous value too: \n\t {get_accuracy(trained_w_continous, test_data)}")
+    dot.node('A', 'Sex')
+    dot.node('B', 'Sex')
+    dot.edge('A', 'B')
     # print(trained_w_continous)

@@ -1,5 +1,6 @@
 import math
-
+from graphviz import Digraph
+i = 0
 class Tree:
     '''
     @breif creates a decision tree
@@ -90,13 +91,17 @@ class Tree:
     @return tree a fully trained tree 
     '''
     @staticmethod
-    def decision_tree_learning(examples, attributes, parent_examples, classification_index=0):
+    def decision_tree_learning(examples, attributes, parent_examples, dot, classification_index=0):
+        global i
         if len(examples) == 0: return Tree.plurality_value(parent_examples) #return the most common output
         if Tree.same_classification(examples): return examples[0][classification_index] #return the class of the first element, since every is the same
         if len(attributes) == 0: return Tree.plurality_value(examples) #if attribute is empty return most common output
 
         max_attribute = Tree.importance(attributes, examples) #attribute witht he highest importance gain
         current_tree = Tree(max_attribute) #create a new tree with rot in max attribute
+        i += 1
+        print(i)
+        dot.node(f"{max_attribute}", f"{max_attribute}")
 
         attributes_names = Tree.get_values_of_attribute(max_attribute, examples) #get the different values in attribute
         
@@ -106,7 +111,10 @@ class Tree:
             new_attribute = attributes.copy()
             del new_attribute[attributes.index(max_attribute)] #remove max attribute from the copy of attribute
 
-            subtree = Tree.decision_tree_learning(exs, new_attribute, examples) #training subtree
+            subtree = Tree.decision_tree_learning(exs, new_attribute, examples, dot) #training subtree
+            if isinstance(subtree, Tree):
+                dot.node(f"{max_attribute}{subtree.attribute}", f"{subtree.attribute}")
+                dot.edge(f"{max_attribute}", f"{max_attribute}{subtree.attribute}")
             current_tree.add_branch(vk, subtree) #add subtree to current tree
         return current_tree
 
