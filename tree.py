@@ -1,8 +1,13 @@
 import math
 
 class Tree:
-    def __init__(self):
-        pass
+    '''
+    @breif creates a decision tree
+
+    @param attribute the attribute this has tree has rot in
+    '''
+    def __init__(self, attribute):
+        self.attribute = attribute
 
     def __str__(self):
         return "Hello tree"
@@ -21,6 +26,11 @@ class Tree:
         if len(examples) == 0: return Tree.plurality_value(parent_examples) #return the most common output
         if Tree.same_classification(examples): return examples[0][classification_index] #return the class of the first element, since every is the same
         if len(attributes) == 0: return Tree.plurality_value(examples) #if attribute is empty return most common output
+
+        max_attribute = Tree.importance(attributes, examples) #attribute witht he highest importance gain
+        current_tree = Tree(max_attribute)
+
+
 
 
 
@@ -146,3 +156,22 @@ class Tree:
         if q == 0: return 0
         if q == 1: return 0
         return -(q*math.log2(q) + (1-q)*math.log2(1-q))
+
+
+    '''
+    @breif gets all the attribute names of a given attribute
+
+    @param attribute the key in dataset
+    @param data the dataset to go through
+
+    @return string[] return a array of values
+    '''
+    @staticmethod
+    def get_values_of_attribute(attribute, data):
+        values = []
+        for line in data:
+            attr = line[attribute]
+            if attr not in values:
+                values.append(attr)
+
+        return values
