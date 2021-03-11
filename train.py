@@ -66,13 +66,52 @@ def convert_line_to_dict(data):
         edited_data.append(new_line_dict)
     return edited_data
 
-def get_accuracy(trained_model, dataset):
+
+'''
+@breif get the accuracy on guessing right with a model on a dataset
+
+@param trained_model A tree which is trained and can be used to predict values
+@param dataset the dataset to test accuracy against
+@param classification_index the index where the correct classification is given
+
+@return float the accuracy of the model on the dataset
+'''
+def get_accuracy(trained_model, dataset, classification_index=0):
     correct_guess = 0
     for line in dataset:
-        if trained_model.predict(line) == line[0]:
+        if trained_model.predict(line) == line[classification_index]:
             correct_guess += 1
 
     return correct_guess/len(dataset)
+
+
+'''
+@breif convert the continous values in the data to descrete values
+
+@param data the dataset to convert
+@param attribute the attribute to change
+@param conversion_rule an dict with min max and output
+
+@return the new dataset
+'''
+def convert_continous_to_discrete_values(data, attibute, conversion_rule):
+    new_data = []
+    for line in data:
+        try:
+            attibute_value = int(line[attibute])
+        except:
+            new_data.append(line) #already a discrete value or a string
+            continue
+
+
+        if attibute_value >= conversion_rule["min"] and attibute_value <= conversion_rule["max"]:
+            new_line = line.copy()
+            new_line[attibute] = conversion_rule["output"] #change to discrete if it is within the values given by the rules
+            new_data.append(new_line) #change the line
+        else:
+            new_data.append(line) #else use the old line
+        
+    return new_data
 
 if __name__ == '__main__':
     #load the datasets
@@ -92,7 +131,28 @@ if __name__ == '__main__':
 
     print(training_data[0])
 
-    trained_w_categorical = Tree.decision_tree_learning(training_data, [1, 3, 8], []) #the trained decision tree for only categorical values
+    #change the Sibsp row to dicrete values
+    training_data   = convert_continous_to_discrete_values(training_data, 4, {"min": 0, "max": 0, "output": "none"})
+    training_data   = convert_continous_to_discrete_values(training_data, 4, {"min": 1, "max": 4, "output": "1 to 4"})
+    training_data   = convert_continous_to_discrete_values(training_data, 4, {"min": 5, "max": 100, "output": ">=5"})
+
+    test_data       = convert_continous_to_discrete_values(test_data, 4, {"min": 0, "max": 0, "output": "none"})
+    test_data       = convert_continous_to_discrete_values(test_data, 4, {"min": 1, "max": 4, "output": "1 to 4"})
+    test_data       = convert_continous_to_discrete_values(test_data, 4, {"min": 5, "max": 100, "output": ">=5"})
+
+    #change the Parch row to dicrete values
+    training_data   = convert_continous_to_discrete_values(training_data, 5, {"min": 0, "max": 0, "output": "none"})
+    training_data   = convert_continous_to_discrete_values(training_data, 5, {"min": 1, "max": 3, "output": "1 to 3"})
+    training_data   = convert_continous_to_discrete_values(training_data, 5, {"min": 4, "max": 100, "output": ">=4"})
+
+    test_data       = convert_continous_to_discrete_values(test_data, 5, {"min": 0, "max": 0, "output": "none"})
+    test_data       = convert_continous_to_discrete_values(test_data, 5, {"min": 1, "max": 3, "output": "1 to 3"})
+    test_data       = convert_continous_to_discrete_values(test_data, 5, {"min": 4, "max": 100, "output": ">=4"})
+
+    print(Tree.get_values_of_attribute(4, training_data))
+    print(Tree.get_values_of_attribute(5, training_data))
+
+    trained_w_continous = Tree.decision_tree_learning(training_data, [1, 3, 4, 5, 8], []) #the trained decision tree for continous values too 
 
 
-    print(f"Accuracy on the testdata on model with only categorical value: \n\t {get_accuracy(trained_w_categorical, test_data)}")
+    print(f"Accuracy on the testdata on model with continous value too: \n\t {get_accuracy(trained_w_continous, test_data)}")

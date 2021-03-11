@@ -39,6 +39,7 @@ class Tree:
     '''
     def predict(self, data):
         attribute_value = data[self.attribute] #the value in the dataset for this attribute
+        print(self.attribute, self.branch)
         subtree = self.branch[attribute_value] #get the correct subtree for this attribute value
         if isinstance(subtree, Tree): #if subtree is a tree
             return subtree.predict(data) #go through the subtree
