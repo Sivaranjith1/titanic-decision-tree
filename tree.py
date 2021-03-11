@@ -9,8 +9,26 @@ class Tree:
     def __init__(self, attribute):
         self.attribute = attribute
 
+        self.branch = {} #branch with key equal attribute_name and value is tree
+
     def __str__(self):
-        return "Hello tree"
+        string = f"{self.attribute} \n"
+
+        for branch in self.branch:
+            string += branch + "\n"
+            string += f"{self.branch[branch]} \t"
+            string += "\n"
+
+        return string
+
+    '''
+    @breif add a branch with attribute name as subtree
+
+    @param attribute_name The value to add as key
+    @param tree the tree to add as subtree
+    '''
+    def add_branch(self, attribute_name, tree):
+        self.branch[attribute_name] = tree
 
     '''
     @brief Train a tree on example data provided to the function
@@ -30,14 +48,18 @@ class Tree:
         max_attribute = Tree.importance(attributes, examples) #attribute witht he highest importance gain
         current_tree = Tree(max_attribute) #create a new tree with rot in max attribute
 
-        attributes_names = Tree.get_values_of_attribute(max_attribute) #get the different values in attribute
+        attributes_names = Tree.get_values_of_attribute(max_attribute, examples) #get the different values in attribute
+        print(max_attribute, attributes_names)
 
         for vk in attributes_names:
-            pass
+            exs = Tree.get_data_from_attribute(max_attribute, vk, examples) #gets the data examples with attribute name vk
 
+            new_attribute = attributes.copy()
+            del new_attribute[attributes.index(max_attribute)] #remove max attribute from the copy of attribute
 
-
-
+            subtree = Tree.decision_tree_learning(exs, new_attribute, examples) #training subtree
+            current_tree.add_branch(vk, subtree) #add subtree to current tree
+        return current_tree
 
     '''
     @breif return the most common output from the dataset
