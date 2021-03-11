@@ -12,14 +12,45 @@ class Tree:
         self.branch = {} #branch with key equal attribute_name and value is tree
 
     def __str__(self):
-        string = f"{self.attribute} \n"
+        string = f"Attr: {self.attribute} \t"
 
         for branch in self.branch:
-            string += str(branch) + "\t"
+            string += "Attr_name:" +  str(branch) + "\t"
             string += f"{self.branch[branch]} \t"
+            # if not isinstance(self.branch[branch], Tree):
             string += "\n"
-
+        # string = ""
+        # branches = [self]
+        # i = 0
+        # while True:
+        #     temp_branches = []
+        #     for tree in branches:
+        #         string += f"Attr: {tree.attribute} \n"
+        #         for branch in tree.branch:
+        #             string += f"{branch} \t"
+        #             if isinstance(tree, Tree):
+        #                 temp_branches.append(tree.branch[branch])
+        #     branches = temp_branches.copy()
+        #     i += 1
+        #     if i >= 3: break
+        
         return string
+
+    def print(self):
+        print("Attr: ",self.attribute)
+        string = ""
+        child_branches= []
+        for branch in self.branch:
+            string += f"{branch} children: "
+            if isinstance(self.branch[branch], Tree):
+                string += f"{self.branch[branch].attribute} \t"
+                child_branches.append(self.branch[branch])
+            else:
+                string += f"Value: {self.branch[branch] } \t"
+                
+        print(string)
+        for child in child_branches:
+            child.print()
 
     '''
     @breif add a branch with attribute name as subtree
