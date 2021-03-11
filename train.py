@@ -66,15 +66,35 @@ def convert_line_to_dict(data):
         edited_data.append(new_line_dict)
     return edited_data
 
+def get_accuracy(trained_model, dataset):
+    correct_guess = 0
+    for line in dataset:
+        if trained_model.predict(line) == line[0]:
+            correct_guess += 1
+
+    return correct_guess/len(dataset)
 
 if __name__ == '__main__':
-    training_data = load_csv('dataset/train.csv')
+    #load the datasets
+    training_data   = load_csv('dataset/train.csv')
+    test_data       = load_csv('dataset/test.csv')
 
+    #find missing columns
     missing_columns = find_missing_columns(training_data)
-    training_data = remove_columns(training_data, missing_columns)
-    training_data = convert_line_to_dict(training_data)
+
+    #remove these missing columns from both datasets
+    training_data   = remove_columns(training_data, missing_columns)
+    test_data       = remove_columns(test_data, missing_columns)
+
+    #convert both datasets to dicts
+    training_data   = convert_line_to_dict(training_data)
+    test_data       = convert_line_to_dict(test_data)
 
     print(training_data[0])
-    trained = Tree.decision_tree_learning(training_data, [1, 3, 8], [])
 
-    print(f"Tree {trained}")
+    trained_w_categorical = Tree.decision_tree_learning(training_data, [1, 3, 8], []) #the trained decision tree for only categorical values
+
+    
+    print(trained_w_categorical.predict(test_data[2]))
+
+    print(get_accuracy(trained_w_categorical, test_data))

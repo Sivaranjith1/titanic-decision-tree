@@ -31,6 +31,21 @@ class Tree:
         self.branch[attribute_name] = tree
 
     '''
+    @breif predict the output of the data
+    
+    @param data an dict with attributes
+
+    @return the predicted case
+    '''
+    def predict(self, data):
+        attribute_value = data[self.attribute] #the value in the dataset for this attribute
+        subtree = self.branch[attribute_value] #get the correct subtree for this attribute value
+        if isinstance(subtree, Tree): #if subtree is a tree
+            return subtree.predict(data) #go through the subtree
+        else: #if subtree is a value
+            return subtree #return the output
+
+    '''
     @brief Train a tree on example data provided to the function
 
     @param examples the training data
@@ -49,7 +64,6 @@ class Tree:
         current_tree = Tree(max_attribute) #create a new tree with rot in max attribute
 
         attributes_names = Tree.get_values_of_attribute(max_attribute, examples) #get the different values in attribute
-        print(max_attribute, attributes_names)
 
         for vk in attributes_names:
             exs = Tree.get_data_from_attribute(max_attribute, vk, examples) #gets the data examples with attribute name vk
