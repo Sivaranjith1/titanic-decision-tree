@@ -80,3 +80,5 @@ if __name__ == '__main__':
     print(f"Count ${Tree.plurality_value([['0', 'Gril'],['1', 'Gril'],['1', 'Gril'],['69', 'Gril'],['69', 'Gril'],['69', 'Gril'],])}")
 
     print(Tree.importance([1, 2], [['0', 'Gril', 'test1'],['1', 'Gril', 'test1'],['1', 'test', 'test2'],['69', 'Gril', 'test1'],['69', 'Gril', 'test2'],['69', 'Gril', 'test1'],]))
+    print(Tree.get_values_of_attribute(3, training_data))
+    print(Tree.get_data_from_attribute(2, 'test2', [['0', 'Gril', 'test1'],['1', 'Gril', 'test1'],['1', 'test', 'test2'],['69', 'Gril', 'test1'],['69', 'Gril', 'test2'],['69', 'Gril', 'test1']]))

@@ -28,7 +28,12 @@ class Tree:
         if len(attributes) == 0: return Tree.plurality_value(examples) #if attribute is empty return most common output
 
         max_attribute = Tree.importance(attributes, examples) #attribute witht he highest importance gain
-        current_tree = Tree(max_attribute)
+        current_tree = Tree(max_attribute) #create a new tree with rot in max attribute
+
+        attributes_names = Tree.get_values_of_attribute(max_attribute) #get the different values in attribute
+
+        for vk in attributes_names:
+            pass
 
 
 
@@ -175,3 +180,22 @@ class Tree:
                 values.append(attr)
 
         return values
+
+    '''
+    @breif get the data where attribute has the value attribute_name
+
+    @param attribute the attribute to look at
+    @param attribute_name the value to check for
+    @param data the dataset
+
+    @return array the new dataset
+    '''
+    @staticmethod
+    def get_data_from_attribute(attribute, attribute_name: str, data):
+        exs = [] #output where attribute has the value attribute_name
+
+        for line in data:
+            if line[attribute] == attribute_name:
+                exs.append(line)
+
+        return exs
