@@ -1,0 +1,5 @@
+digraph {
+	1 [label=Sex]
+	2 [label=Sex]
+	1 -> 2
+}

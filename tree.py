@@ -1,4 +1,5 @@
 import math
+from graphviz import Digraph
 
 class Tree:
     '''
@@ -48,6 +49,16 @@ class Tree:
             return subtree.predict(data) #go through the subtree
         else: #if subtree is a value
             return subtree #return the output
+
+    def start_dot(self):
+        dot = Digraph()
+        self.add_to_dot(dot, None, 0)
+        dot.render('test-output/round-table.gv', view=True)
+
+    def add_to_dot(self, dot, parent_name, index):
+        dot.node(f"{self.attribute}{index}", f"{self.attribute}")
+        if parent_name != None:
+            dot.edge(parent_name, f"{self.attribute}{index}")
 
     '''
     @brief Train a tree on example data provided to the function

@@ -172,6 +172,7 @@ if __name__ == '__main__':
 
     trained_w_categorical = Tree.decision_tree_learning(training_data, [1, 3, 4, 5, 8], []) #the trained decision tree for only categorical values
     print(f"Accuracy on the testdata on model with only categorical value: \n\t {get_accuracy(trained_w_categorical, test_data)}")
+    trained_w_categorical.start_dot()
     # print(trained_w_categorical)
 
 
