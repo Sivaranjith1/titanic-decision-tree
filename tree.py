@@ -52,10 +52,11 @@ class Tree:
 
     def start_dot(self):
         dot = Digraph()
-        self.add_to_dot(dot, None, None, 0)
+        self.add_to_dot(dot, None, None, 0, 0)
         dot.render('test-output/round-table.gv', view=True)
 
-    def add_to_dot(self, dot, parent_name, attribute_name, index):
+    def add_to_dot(self, dot, parent_name, attribute_name, index, level):
+        print(f"index {index}")
         name = f"{self.attribute}{index}"
         if(attribute_name != None):
             name += f"{attribute_name}"
@@ -67,9 +68,9 @@ class Tree:
         for i, branch in enumerate(self.branch):
             tree = self.branch[branch]
             if isinstance(tree, Tree):
-                tree.add_to_dot(dot, name, branch, index + 1 + i)
+                tree.add_to_dot(dot, name, branch, index + 1 + i + level*10, level + 1)
             else:
-                value_name = f"Value {branch}{index + 1 + i}"
+                value_name = f"Value {branch}{index + 1 + i + level*10}"
                 dot.node(value_name, "Not survived" if branch == 0 else "Survived")
                 dot.edge(name, value_name)
 
