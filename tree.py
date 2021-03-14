@@ -56,7 +56,6 @@ class Tree:
         dot.render('test-output/round-table.gv', view=True)
 
     def add_to_dot(self, dot, parent_name, attribute_name, index, level):
-        print(f"index {index}")
         name = f"{self.attribute}{index}"
         if(attribute_name != None):
             name += f"{attribute_name}"
@@ -70,8 +69,8 @@ class Tree:
             if isinstance(tree, Tree):
                 tree.add_to_dot(dot, name, branch, index + 1 + i + level*10, level + 1)
             else:
-                value_name = f"Value {branch}{index + 1 + i + level*10}"
-                dot.node(value_name, "Not survived" if branch == 0 else "Survived")
+                value_name = f"Value {tree}{index + 1 + i + level*10}"
+                dot.node(value_name, "Not survived" if tree == '0' else "Survived")
                 dot.edge(name, value_name)
 
     '''
