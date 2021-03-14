@@ -1,5 +1,323 @@
 digraph {
-	1 [label=Sex]
-	2 [label=Sex]
-	1 -> 2
+	30 [label="Attribute: 3"]
+	"11male" [label="Attribute: 1; Value male"]
+	30 -> "11male"
+	423 [label="Attribute: 4; Value 3"]
+	"11male" -> 423
+	531 [label="Attribute: 5; Value 1"]
+	423 -> 531
+	840 [label="Attribute: 8; Value 0"]
+	531 -> 840
+	"Value S5" [label=Survived]
+	840 -> "Value S5"
+	"Value C6" [label=Survived]
+	840 -> "Value C6"
+	"Value Q7" [label=Survived]
+	840 -> "Value Q7"
+	"Value 95" [label=Survived]
+	531 -> "Value 95"
+	861 [label="Attribute: 8; Value 1"]
+	531 -> 861
+	"Value C7" [label=Survived]
+	861 -> "Value C7"
+	"Value S8" [label=Survived]
+	861 -> "Value S8"
+	"Value Q9" [label=Survived]
+	861 -> "Value Q9"
+	"Value 57" [label=Survived]
+	531 -> "Value 57"
+	"Value 38" [label=Survived]
+	531 -> "Value 38"
+	"Value 49" [label=Survived]
+	531 -> "Value 49"
+	8102 [label="Attribute: 8; Value 2"]
+	531 -> 8102
+	"Value S11" [label=Survived]
+	8102 -> "Value S11"
+	840 [label="Attribute: 8; Value 0"]
+	423 -> 840
+	"55S" [label="Attribute: 5; Value S"]
+	840 -> "55S"
+	"Value 06" [label=Survived]
+	"55S" -> "Value 06"
+	"Value 17" [label=Survived]
+	"55S" -> "Value 17"
+	"Value 28" [label=Survived]
+	"55S" -> "Value 28"
+	"56Q" [label="Attribute: 5; Value Q"]
+	840 -> "56Q"
+	"Value 07" [label=Survived]
+	"56Q" -> "Value 07"
+	"57C" [label="Attribute: 5; Value C"]
+	840 -> "57C"
+	"Value 08" [label=Survived]
+	"57C" -> "Value 08"
+	"Value 19" [label=Survived]
+	"57C" -> "Value 19"
+	554 [label="Attribute: 5; Value 4"]
+	423 -> 554
+	"Value 16" [label=Survived]
+	554 -> "Value 16"
+	872 [label="Attribute: 8; Value 2"]
+	554 -> 872
+	"Value S8" [label=Survived]
+	872 -> "Value S8"
+	862 [label="Attribute: 8; Value 2"]
+	423 -> 862
+	"Value S7" [label=Survived]
+	862 -> "Value S7"
+	"Value Q8" [label=Survived]
+	862 -> "Value Q8"
+	"Value C9" [label=Survived]
+	862 -> "Value C9"
+	"Value 87" [label=Survived]
+	423 -> "Value 87"
+	"Value 58" [label=Survived]
+	423 -> "Value 58"
+	"Value 39" [label=Survived]
+	423 -> "Value 39"
+	532 [label="Attribute: 5; Value 2"]
+	"11male" -> 532
+	440 [label="Attribute: 4; Value 0"]
+	532 -> 440
+	"Value 15" [label=Survived]
+	440 -> "Value 15"
+	860 [label="Attribute: 8; Value 0"]
+	440 -> 860
+	"Value Q7" [label=Survived]
+	860 -> "Value Q7"
+	"Value S8" [label=Survived]
+	860 -> "Value S8"
+	"Value C9" [label=Survived]
+	860 -> "Value C9"
+	"Value 27" [label=Survived]
+	440 -> "Value 27"
+	451 [label="Attribute: 4; Value 1"]
+	532 -> 451
+	861 [label="Attribute: 8; Value 1"]
+	451 -> 861
+	"Value S7" [label=Survived]
+	861 -> "Value S7"
+	872 [label="Attribute: 8; Value 2"]
+	451 -> 872
+	"Value S8" [label=Survived]
+	872 -> "Value S8"
+	"Value 08" [label=Survived]
+	451 -> "Value 08"
+	462 [label="Attribute: 4; Value 2"]
+	532 -> 462
+	870 [label="Attribute: 8; Value 0"]
+	462 -> 870
+	"Value C8" [label=Survived]
+	870 -> "Value C8"
+	"Value S9" [label=Survived]
+	870 -> "Value S9"
+	"Value 18" [label=Survived]
+	462 -> "Value 18"
+	541 [label="Attribute: 5; Value 1"]
+	"11male" -> 541
+	850 [label="Attribute: 8; Value 0"]
+	541 -> 850
+	"46C" [label="Attribute: 4; Value C"]
+	850 -> "46C"
+	"Value 07" [label=Survived]
+	"46C" -> "Value 07"
+	"Value 18" [label=Survived]
+	"46C" -> "Value 18"
+	"47S" [label="Attribute: 4; Value S"]
+	850 -> "47S"
+	"Value 08" [label=Survived]
+	"47S" -> "Value 08"
+	"Value 19" [label=Survived]
+	"47S" -> "Value 19"
+	"Value 210" [label=Survived]
+	"47S" -> "Value 210"
+	"Value Q8" [label=Survived]
+	850 -> "Value Q8"
+	861 [label="Attribute: 8; Value 1"]
+	541 -> 861
+	"47C" [label="Attribute: 4; Value C"]
+	861 -> "47C"
+	"Value 08" [label=Survived]
+	"47C" -> "Value 08"
+	"Value 19" [label=Survived]
+	"47C" -> "Value 19"
+	"48S" [label="Attribute: 4; Value S"]
+	861 -> "48S"
+	"Value 19" [label=Survived]
+	"48S" -> "Value 19"
+	"Value 010" [label=Survived]
+	"48S" -> "Value 010"
+	472 [label="Attribute: 4; Value 2"]
+	541 -> 472
+	"Value 38" [label=Survived]
+	472 -> "Value 38"
+	"Value 29" [label=Survived]
+	472 -> "Value 29"
+	"Value 110" [label=Survived]
+	472 -> "Value 110"
+	8110 [label="Attribute: 8; Value 0"]
+	472 -> 8110
+	"Value S12" [label=Survived]
+	8110 -> "Value S12"
+	"Value C13" [label=Survived]
+	8110 -> "Value C13"
+	"Value 38" [label=Survived]
+	541 -> "Value 38"
+	"12female" [label="Attribute: 1; Value female"]
+	30 -> "12female"
+	533 [label="Attribute: 5; Value 3"]
+	"12female" -> 533
+	441 [label="Attribute: 4; Value 1"]
+	533 -> 441
+	850 [label="Attribute: 8; Value 0"]
+	441 -> 850
+	"Value S6" [label=Survived]
+	850 -> "Value S6"
+	"Value C7" [label=Survived]
+	850 -> "Value C7"
+	861 [label="Attribute: 8; Value 1"]
+	441 -> 861
+	"Value S7" [label=Survived]
+	861 -> "Value S7"
+	"Value C8" [label=Survived]
+	861 -> "Value C8"
+	"Value Q9" [label=Survived]
+	861 -> "Value Q9"
+	"Value 27" [label=Survived]
+	441 -> "Value 27"
+	"Value 38" [label=Survived]
+	441 -> "Value 38"
+	850 [label="Attribute: 8; Value 0"]
+	533 -> 850
+	"46C" [label="Attribute: 4; Value C"]
+	850 -> "46C"
+	"Value 07" [label=Survived]
+	"46C" -> "Value 07"
+	"Value 18" [label=Survived]
+	"46C" -> "Value 18"
+	"47Q" [label="Attribute: 4; Value Q"]
+	850 -> "47Q"
+	"Value 08" [label=Survived]
+	"47Q" -> "Value 08"
+	"Value 29" [label=Survived]
+	"47Q" -> "Value 29"
+	"Value 110" [label=Survived]
+	"47Q" -> "Value 110"
+	"48S" [label="Attribute: 4; Value S"]
+	850 -> "48S"
+	"Value 19" [label=Survived]
+	"48S" -> "Value 19"
+	"Value 010" [label=Survived]
+	"48S" -> "Value 010"
+	"Value 211" [label=Survived]
+	"48S" -> "Value 211"
+	"Value 312" [label=Survived]
+	"48S" -> "Value 312"
+	462 [label="Attribute: 4; Value 2"]
+	533 -> 462
+	870 [label="Attribute: 8; Value 0"]
+	462 -> 870
+	"Value S8" [label=Survived]
+	870 -> "Value S8"
+	"Value C9" [label=Survived]
+	870 -> "Value C9"
+	"Value Q10" [label=Survived]
+	870 -> "Value Q10"
+	"Value 28" [label=Survived]
+	462 -> "Value 28"
+	891 [label="Attribute: 8; Value 1"]
+	462 -> 891
+	"Value S10" [label=Survived]
+	891 -> "Value S10"
+	"Value 810" [label=Survived]
+	462 -> "Value 810"
+	8114 [label="Attribute: 8; Value 4"]
+	462 -> 8114
+	"Value S12" [label=Survived]
+	8114 -> "Value S12"
+	"Value 512" [label=Survived]
+	462 -> "Value 512"
+	"Value 313" [label=Survived]
+	462 -> "Value 313"
+	474 [label="Attribute: 4; Value 4"]
+	533 -> 474
+	880 [label="Attribute: 8; Value 0"]
+	474 -> 880
+	"Value S9" [label=Survived]
+	880 -> "Value S9"
+	"Value 19" [label=Survived]
+	474 -> "Value 19"
+	485 [label="Attribute: 4; Value 5"]
+	533 -> 485
+	891 [label="Attribute: 8; Value 1"]
+	485 -> 891
+	"Value S10" [label=Survived]
+	891 -> "Value S10"
+	"Value 010" [label=Survived]
+	485 -> "Value 010"
+	"Value 99" [label=Survived]
+	533 -> "Value 99"
+	"Value 610" [label=Survived]
+	533 -> "Value 610"
+	4113 [label="Attribute: 4; Value 3"]
+	533 -> 4113
+	"Value 012" [label=Survived]
+	4113 -> "Value 012"
+	"Value 113" [label=Survived]
+	4113 -> "Value 113"
+	541 [label="Attribute: 5; Value 1"]
+	"12female" -> 541
+	850 [label="Attribute: 8; Value 0"]
+	541 -> 850
+	"46C" [label="Attribute: 4; Value C"]
+	850 -> "46C"
+	"Value 07" [label=Survived]
+	"46C" -> "Value 07"
+	"Value 18" [label=Survived]
+	"46C" -> "Value 18"
+	"Value S7" [label=Survived]
+	850 -> "Value S7"
+	"Value Q8" [label=Survived]
+	850 -> "Value Q8"
+	"Value 16" [label=Survived]
+	541 -> "Value 16"
+	472 [label="Attribute: 4; Value 2"]
+	541 -> 472
+	"Value 08" [label=Survived]
+	472 -> "Value 08"
+	"Value 29" [label=Survived]
+	472 -> "Value 29"
+	"Value 310" [label=Survived]
+	472 -> "Value 310"
+	8111 [label="Attribute: 8; Value 1"]
+	472 -> 8111
+	"Value S12" [label=Survived]
+	8111 -> "Value S12"
+	"Value 48" [label=Survived]
+	541 -> "Value 48"
+	"Value 39" [label=Survived]
+	541 -> "Value 39"
+	552 [label="Attribute: 5; Value 2"]
+	"12female" -> 552
+	"Value 16" [label=Survived]
+	552 -> "Value 16"
+	870 [label="Attribute: 8; Value 0"]
+	552 -> 870
+	"48S" [label="Attribute: 4; Value S"]
+	870 -> "48S"
+	"Value 09" [label=Survived]
+	"48S" -> "Value 09"
+	"Value 110" [label=Survived]
+	"48S" -> "Value 110"
+	"Value 311" [label=Survived]
+	"48S" -> "Value 311"
+	"Value C9" [label=Survived]
+	870 -> "Value C9"
+	"Value Q10" [label=Survived]
+	870 -> "Value Q10"
+	"Value 38" [label=Survived]
+	552 -> "Value 38"
+	"Value 29" [label=Survived]
+	552 -> "Value 29"
 }

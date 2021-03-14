@@ -52,13 +52,26 @@ class Tree:
 
     def start_dot(self):
         dot = Digraph()
-        self.add_to_dot(dot, None, 0)
+        self.add_to_dot(dot, None, None, 0)
         dot.render('test-output/round-table.gv', view=True)
 
-    def add_to_dot(self, dot, parent_name, index):
-        dot.node(f"{self.attribute}{index}", f"{self.attribute}")
+    def add_to_dot(self, dot, parent_name, attribute_name, index):
+        name = f"{self.attribute}{index}"
+        if(attribute_name != None):
+            name += f"{attribute_name}"
+        value = "" if attribute_name == None else f"; Value {attribute_name}"
+        dot.node(name, f"Attribute: {self.attribute}{value}")
         if parent_name != None:
-            dot.edge(parent_name, f"{self.attribute}{index}")
+            dot.edge(parent_name, name)
+
+        for i, branch in enumerate(self.branch):
+            tree = self.branch[branch]
+            if isinstance(tree, Tree):
+                tree.add_to_dot(dot, name, branch, index + 1 + i)
+            else:
+                value_name = f"Value {branch}{index + 1 + i}"
+                dot.node(value_name, "Not survived" if branch == 0 else "Survived")
+                dot.edge(name, value_name)
 
     '''
     @brief Train a tree on example data provided to the function
