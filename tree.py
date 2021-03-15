@@ -70,7 +70,7 @@ class Tree:
                 tree.add_to_dot(dot, name, branch, index + 1 + i + level*10, level + 1)
             else:
                 value_name = f"Value {tree}{index + 1 + i + level*10}"
-                dot.node(value_name, "Not survived" if tree == '0' else "Survived")
+                dot.node(value_name, f"Value: {branch}; Not survived" if tree == '0' else f"Value: {branch}; Survived")
                 dot.edge(name, value_name)
 
     '''

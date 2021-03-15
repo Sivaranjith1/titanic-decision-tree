@@ -1,19 +1,249 @@
 digraph {
 	30 [label="Attribute: 3"]
-	"11male" [label="Attribute: 1; Value male"]
-	30 -> "11male"
-	"Value 012" [label="Not survived"]
-	"11male" -> "Value 012"
-	"Value 013" [label="Not survived"]
-	"11male" -> "Value 013"
-	"Value 014" [label="Not survived"]
-	"11male" -> "Value 014"
-	"12female" [label="Attribute: 1; Value female"]
-	30 -> "12female"
-	"Value 113" [label=Survived]
-	"12female" -> "Value 113"
-	"Value 114" [label=Survived]
-	"12female" -> "Value 114"
-	"Value 115" [label=Survived]
-	"12female" -> "Value 115"
+	"61male" [label="Attribute: 6; Value male"]
+	30 -> "61male"
+	71260000 [label="Attribute: 7; Value 60000"]
+	"61male" -> 71260000
+	"Value 033" [label="Value: 0; Not survived"]
+	71260000 -> "Value 033"
+	71320000 [label="Attribute: 7; Value 20000"]
+	"61male" -> 71320000
+	"Value 034" [label="Value: 20; Not survived"]
+	71320000 -> "Value 034"
+	"Value 035" [label="Value: 0; Not survived"]
+	71320000 -> "Value 035"
+	"Value 036" [label="Value: 80; Not survived"]
+	71320000 -> "Value 036"
+	"Value 014" [label="Value: 370000; Not survived"]
+	"61male" -> "Value 014"
+	715340000 [label="Attribute: 7; Value 340000"]
+	"61male" -> 715340000
+	"Value 036" [label="Value: 0; Not survived"]
+	715340000 -> "Value 036"
+	"Value 037" [label="Value: 20; Not survived"]
+	715340000 -> "Value 037"
+	71610000 [label="Attribute: 7; Value 10000"]
+	"61male" -> 71610000
+	"Value 037" [label="Value: 20; Not survived"]
+	71610000 -> "Value 037"
+	"Value 038" [label="Value: 120; Not survived"]
+	71610000 -> "Value 038"
+	"Value 039" [label="Value: 60; Not survived"]
+	71610000 -> "Value 039"
+	"Value 040" [label="Value: 0; Not survived"]
+	71610000 -> "Value 040"
+	"Value 041" [label="Value: 80; Not survived"]
+	71610000 -> "Value 041"
+	"Value 042" [label="Value: 40; Not survived"]
+	71610000 -> "Value 042"
+	"Value 043" [label="Value: 220; Not survived"]
+	71610000 -> "Value 043"
+	"Value 044" [label="Value: 100; Not survived"]
+	71610000 -> "Value 044"
+	"Value 045" [label="Value: 260; Not survived"]
+	71610000 -> "Value 045"
+	"Value 046" [label="Value: 140; Not survived"]
+	71610000 -> "Value 046"
+	"Value 147" [label="Value: 500; Survived"]
+	71610000 -> "Value 147"
+	717240000 [label="Attribute: 7; Value 240000"]
+	"61male" -> 717240000
+	"Value 038" [label="Value: 0; Not survived"]
+	717240000 -> "Value 038"
+	"Value 039" [label="Value: 20; Not survived"]
+	717240000 -> "Value 039"
+	7183100000 [label="Attribute: 7; Value 3100000"]
+	"61male" -> 7183100000
+	"Value 039" [label="Value: 0; Not survived"]
+	7183100000 -> "Value 039"
+	"Value 040" [label="Value: 20; Not survived"]
+	7183100000 -> "Value 040"
+	719390000 [label="Attribute: 7; Value 390000"]
+	"61male" -> 719390000
+	"Value 040" [label="Value: 0; Not survived"]
+	719390000 -> "Value 040"
+	7200 [label="Attribute: 7; Value 0"]
+	"61male" -> 7200
+	"Value 041" [label="Value: 40; Not survived"]
+	7200 -> "Value 041"
+	"Value 042" [label="Value: 0; Not survived"]
+	7200 -> "Value 042"
+	"Value 043" [label="Value: 20; Not survived"]
+	7200 -> "Value 043"
+	"Value 044" [label="Value: 60; Not survived"]
+	7200 -> "Value 044"
+	"Value 021" [label="Value: 330000; Not survived"]
+	"61male" -> "Value 021"
+	722230000 [label="Attribute: 7; Value 230000"]
+	"61male" -> 722230000
+	"Value 043" [label="Value: 0; Not survived"]
+	722230000 -> "Value 043"
+	"Value 044" [label="Value: 20; Not survived"]
+	722230000 -> "Value 044"
+	723110000 [label="Attribute: 7; Value 110000"]
+	"61male" -> 723110000
+	"Value 044" [label="Value: 20; Not survived"]
+	723110000 -> "Value 044"
+	"Value 045" [label="Value: 40; Not survived"]
+	723110000 -> "Value 045"
+	"Value 046" [label="Value: 0; Not survived"]
+	723110000 -> "Value 046"
+	"Value 047" [label="Value: 60; Not survived"]
+	723110000 -> "Value 047"
+	"Value 048" [label="Value: 200; Not survived"]
+	723110000 -> "Value 048"
+	"Value 149" [label="Value: 120; Survived"]
+	723110000 -> "Value 149"
+	"Value 150" [label="Value: 140; Survived"]
+	723110000 -> "Value 150"
+	"Value 024" [label="Value: 380000; Not survived"]
+	"61male" -> "Value 024"
+	725350000 [label="Attribute: 7; Value 350000"]
+	"61male" -> 725350000
+	"Value 046" [label="Value: 0; Not survived"]
+	725350000 -> "Value 046"
+	726360000 [label="Attribute: 7; Value 360000"]
+	"61male" -> 726360000
+	"Value 047" [label="Value: 0; Not survived"]
+	726360000 -> "Value 047"
+	"Value 148" [label="Value: 20; Survived"]
+	726360000 -> "Value 148"
+	727310000 [label="Attribute: 7; Value 310000"]
+	"61male" -> 727310000
+	"Value 048" [label="Value: 0; Not survived"]
+	727310000 -> "Value 048"
+	72830000 [label="Attribute: 7; Value 30000"]
+	"61male" -> 72830000
+	"Value 049" [label="Value: 0; Not survived"]
+	72830000 -> "Value 049"
+	"Value 050" [label="Value: 20; Not survived"]
+	72830000 -> "Value 050"
+	"Value 051" [label="Value: 80; Not survived"]
+	72830000 -> "Value 051"
+	"Value 052" [label="Value: 60; Not survived"]
+	72830000 -> "Value 052"
+	"Value 029" [label="Value: 250000; Not survived"]
+	"61male" -> "Value 029"
+	"Value 030" [label="Value: 50000; Not survived"]
+	"61male" -> "Value 030"
+	"Value 031" [label="Value: 220000; Not survived"]
+	"61male" -> "Value 031"
+	"Value 032" [label="Value: 40000; Not survived"]
+	"61male" -> "Value 032"
+	"Value 033" [label="Value: 210000; Not survived"]
+	"61male" -> "Value 033"
+	"Value 034" [label="Value: 320000; Not survived"]
+	"61male" -> "Value 034"
+	"Value 035" [label="Value: 260000; Not survived"]
+	"61male" -> "Value 035"
+	"62female" [label="Attribute: 6; Value female"]
+	30 -> "62female"
+	713390000 [label="Attribute: 7; Value 390000"]
+	"62female" -> 713390000
+	"Value 134" [label="Value: 0; Survived"]
+	713390000 -> "Value 134"
+	71410000 [label="Attribute: 7; Value 10000"]
+	"62female" -> 71410000
+	"Value 135" [label="Value: 120; Survived"]
+	71410000 -> "Value 135"
+	"Value 136" [label="Value: 60; Survived"]
+	71410000 -> "Value 136"
+	"Value 137" [label="Value: 40; Survived"]
+	71410000 -> "Value 137"
+	"Value 138" [label="Value: 220; Survived"]
+	71410000 -> "Value 138"
+	"Value 139" [label="Value: 20; Survived"]
+	71410000 -> "Value 139"
+	"Value 140" [label="Value: 100; Survived"]
+	71410000 -> "Value 140"
+	"Value 141" [label="Value: 0; Survived"]
+	71410000 -> "Value 141"
+	"Value 142" [label="Value: 80; Survived"]
+	71410000 -> "Value 142"
+	"Value 143" [label="Value: 260; Survived"]
+	71410000 -> "Value 143"
+	"Value 144" [label="Value: 500; Survived"]
+	71410000 -> "Value 144"
+	"Value 145" [label="Value: 140; Survived"]
+	71410000 -> "Value 145"
+	715110000 [label="Attribute: 7; Value 110000"]
+	"62female" -> 715110000
+	"Value 136" [label="Value: 20; Survived"]
+	715110000 -> "Value 136"
+	"Value 137" [label="Value: 40; Survived"]
+	715110000 -> "Value 137"
+	"Value 138" [label="Value: 60; Survived"]
+	715110000 -> "Value 138"
+	"Value 139" [label="Value: 200; Survived"]
+	715110000 -> "Value 139"
+	"Value 140" [label="Value: 80; Survived"]
+	715110000 -> "Value 140"
+	"Value 141" [label="Value: 120; Survived"]
+	715110000 -> "Value 141"
+	"Value 042" [label="Value: 140; Not survived"]
+	715110000 -> "Value 042"
+	"Value 116" [label="Value: 230000; Survived"]
+	"62female" -> "Value 116"
+	7170 [label="Attribute: 7; Value 0"]
+	"62female" -> 7170
+	"Value 138" [label="Value: 0; Survived"]
+	7170 -> "Value 138"
+	"Value 139" [label="Value: 60; Survived"]
+	7170 -> "Value 139"
+	"Value 140" [label="Value: 40; Survived"]
+	7170 -> "Value 140"
+	"Value 141" [label="Value: 20; Survived"]
+	7170 -> "Value 141"
+	718340000 [label="Attribute: 7; Value 340000"]
+	"62female" -> 718340000
+	"Value 139" [label="Value: 0; Survived"]
+	718340000 -> "Value 139"
+	"Value 040" [label="Value: 20; Not survived"]
+	718340000 -> "Value 040"
+	719360000 [label="Attribute: 7; Value 360000"]
+	"62female" -> 719360000
+	"Value 140" [label="Value: 0; Survived"]
+	719360000 -> "Value 140"
+	"Value 141" [label="Value: 20; Survived"]
+	719360000 -> "Value 141"
+	"Value 120" [label="Value: 30000; Survived"]
+	"62female" -> "Value 120"
+	7213100000 [label="Attribute: 7; Value 3100000"]
+	"62female" -> 7213100000
+	"Value 142" [label="Value: 0; Survived"]
+	7213100000 -> "Value 142"
+	"Value 043" [label="Value: 20; Not survived"]
+	7213100000 -> "Value 043"
+	722240000 [label="Attribute: 7; Value 240000"]
+	"62female" -> 722240000
+	"Value 143" [label="Value: 20; Survived"]
+	722240000 -> "Value 143"
+	"Value 144" [label="Value: 0; Survived"]
+	722240000 -> "Value 144"
+	"Value 123" [label="Value: 20000; Survived"]
+	"62female" -> "Value 123"
+	724380000 [label="Attribute: 7; Value 380000"]
+	"62female" -> 724380000
+	"Value 145" [label="Value: 0; Survived"]
+	724380000 -> "Value 145"
+	"Value 046" [label="Value: 20; Not survived"]
+	724380000 -> "Value 046"
+	725330000 [label="Attribute: 7; Value 330000"]
+	"62female" -> 725330000
+	"Value 146" [label="Value: 0; Survived"]
+	725330000 -> "Value 146"
+	"Value 126" [label="Value: 310000; Survived"]
+	"62female" -> "Value 126"
+	727350000 [label="Attribute: 7; Value 350000"]
+	"62female" -> 727350000
+	"Value 048" [label="Value: 0; Not survived"]
+	727350000 -> "Value 048"
+	"Value 128" [label="Value: 370000; Survived"]
+	"62female" -> "Value 128"
+	"Value 129" [label="Value: 220000; Survived"]
+	"62female" -> "Value 129"
+	"Value 130" [label="Value: 250000; Survived"]
+	"62female" -> "Value 130"
+	"Value 131" [label="Value: 60000; Survived"]
+	"62female" -> "Value 131"
 }

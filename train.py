@@ -170,9 +170,9 @@ if __name__ == '__main__':
 
     print(training_data[0])
 
-    trained_w_categorical = Tree.decision_tree_learning(training_data, [1, 3,], []) #the trained decision tree for only categorical values
+    trained_w_categorical = Tree.decision_tree_learning(training_data, [3], []) #the trained decision tree for only categorical values
     print(f"Accuracy on the testdata on model with only categorical value: \n\t {get_accuracy(trained_w_categorical, test_data)}")
-    trained_w_categorical.start_dot()
+    # trained_w_categorical.start_dot()
     # print(trained_w_categorical)
 
 
@@ -196,8 +196,8 @@ if __name__ == '__main__':
     test_data       = convert_continous_to_discrete_values(test_data, 5, {"min": 4, "max": 100, "output": ">=4"})
 
     #convert fare to class of tens
-    training_data     = group_in_number(training_data, 10, 7)
-    test_data         = group_in_number(test_data, 10, 7)
+    training_data     = group_in_number(training_data, 20, 7)
+    test_data         = group_in_number(test_data, 20, 7)
 
     #convert ticket to number
     training_data     = change_to_numbers(training_data, 6)
@@ -211,8 +211,8 @@ if __name__ == '__main__':
     # print(Tree.get_values_of_attribute(5, training_data))
     # print(Tree.get_values_of_attribute(6, training_data))
 
-    trained_w_continous = Tree.decision_tree_learning(training_data, [1, 3, 4, 5, 6, 7, 8], []) #the trained decision tree for continous values too 
-    # trained_w_continous.start_dot()
+    trained_w_continous = Tree.decision_tree_learning(training_data, [3, 6, 7], []) #the trained decision tree for continous values too 
+    trained_w_continous.start_dot()
 
     print("\n\n")
     print(f"Accuracy on the testdata on model with continous value too: \n\t {get_accuracy(trained_w_continous, test_data)}")
